@@ -21,8 +21,10 @@ class House:
 
     def __lt__(self, other):
         return self.number_of_floors < other
+        
     def __le__(self, other):
         return self.number_of_floors <= other
+        
     def __gt__(self, other):
         return self.number_of_floors > other
     
