@@ -18,7 +18,7 @@ class Eagle:
 class Pegasus(Horse, Eagle):
     def move(self, dx, dy):
         super().run(dx)
-        super().fly(dy)
+        Eagle.fly(self, dy)
 
     def get_pos(self):
         tupl = (self.x_distance, self.y_distance)
