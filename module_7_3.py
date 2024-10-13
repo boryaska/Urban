@@ -22,7 +22,7 @@ class WordsFinder:
         dct = dict()
         info_dct = WordsFinder.get_all_words(self)
         for a, b in info_dct.items():
-            index = b.index(word.lower())
+            index = b.index(word.lower()) + 1
             dct[a] = index
 
         return dct    
