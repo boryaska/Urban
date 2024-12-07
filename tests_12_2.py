@@ -54,30 +54,37 @@ class Tournament:
         return finishers
     
 class TournamentTest(TestCase):
+    is_frozen = True
+
     @classmethod
     def setUpClass(cls):
         cls.all_results = dict()
+        cls.is_frozen = True
 
     def setUp(self):
         self.usein = Runner('Усэйн', 10)
         self.andre = Runner('Андрей', 9)
         self.nick = Runner('Ник', 3)
 
+    @unittest.skipIf(is_frozen,'Тесты в этом кейсе заморожены')
     def test_tournament_1(self):
         tour_1 = Tournament(90, self.usein, self.nick)    
         TournamentTest.all_results['1'] = tour_1.start()
 
+    @unittest.skipIf(is_frozen,'Тесты в этом кейсе заморожены')
     def test_tournament_2(self):
         tour_2 = Tournament(90, self.andre, self.nick)    
         TournamentTest.all_results['2'] = tour_2.start()
 
+    @unittest.skipIf(is_frozen,'Тесты в этом кейсе заморожены')
     def test_tournament_3(self):
         tour_3 = Tournament(90, self.usein, self.andre, self.nick)    
         TournamentTest.all_results['3'] = tour_3.start()
 
+    @unittest.skipIf(is_frozen,'Тесты в этом кейсе заморожены')
     def test_tournament_4(self):
         tour_4 = Tournament(9, self.andre, self.usein, self.nick)    
-        TournamentTest.all_results['4'] = tour_4.start()            
+        TournamentTest.all_results['4'] = tour_4.start()
 
     @classmethod
     def tearDownClass(cls):
